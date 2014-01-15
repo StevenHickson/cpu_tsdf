@@ -196,7 +196,7 @@ remapCloud (pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr cloud,
   cloud_remapped = pcl::PointCloud<pcl::PointXYZRGBA> (width_, height_);
   // Initialize to nan
 #pragma omp parallel for
-  for (size_t i = 0; i < cloud_remapped.size (); i++)
+  for (int i = 0; i < cloud_remapped.size (); i++)
   {
     cloud_remapped[i].z = std::numeric_limits<float>::quiet_NaN ();
   }

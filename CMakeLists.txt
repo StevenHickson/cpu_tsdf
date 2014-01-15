@@ -50,7 +50,7 @@ configure_file (${PROJECT_SOURCE_DIR}/CPUTSDFConfig.cmake.in ${CMAKE_CURRENT_BIN
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/CPUTSDFConfig.cmake DESTINATION share)
 
 add_executable (integrate src/prog/integrate.cpp)
-target_link_libraries(integrate ${PCL_LIBRARIES} cpu_tsdf boost_program_options)
+target_link_libraries(integrate ${PCL_LIBRARIES} ${Boost_LIBRARIES} cpu_tsdf)
 install(TARGETS integrate DESTINATION bin)
 
 

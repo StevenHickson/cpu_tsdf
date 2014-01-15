@@ -61,7 +61,7 @@ cpu_tsdf::TSDFVolumeOctree::integrateCloud (
   std::vector<cpu_tsdf::OctreeNode::Ptr> voxels_culled;
   getFrustumCulledVoxels(trans, voxels_culled);
 #pragma omp parallel for
-  for (size_t i = 0; i < voxels_culled.size (); i++)
+  for (int i = 0; i < voxels_culled.size (); i++)
   {
     updateVoxel (voxels_culled[i], cloud, normals, trans_inv);
   }
